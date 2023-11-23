@@ -1,0 +1,20 @@
+name: Parallel und Sequential Jobs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  parallelJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello from Job 1
+        run: echo "Hello from Job 1"
+
+  sequentialJob:
+    runs-on: ubuntu-latest
+    needs: parallelJob
+    steps:
+      - name: Hello from Job 2
+        run: echo "Hello from Job 2"
