@@ -12,6 +12,12 @@ jobs:
       - name: Hello from Job 1
         run: echo "Hello from Job 1"
 
+  parallelJob2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello from Job 2
+        run: echo "Hello from Job 2"
+
   sequentialJob:
     runs-on: ubuntu-latest
     needs: parallelJob
